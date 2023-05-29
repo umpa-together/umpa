@@ -1,4 +1,4 @@
-# UMPA 
+# UMPA
 
 UMPA의 서비스들을 통합적으로 관리하는 mono repository
 
@@ -39,7 +39,9 @@ User
 RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ```
-TBD
+user
+
+... TBD
 ```
 
 ***
@@ -76,7 +78,7 @@ TBD
 
 ### authRoutes
 
-- [ ] 회원 가입 ```POST /signUp```
+- [x] 회원 가입 ```POST /signUp```
 
 - [ ] 로그인 ```POST /signIn```
 
@@ -107,17 +109,17 @@ TBD
 - [ ] 댓글 작성 ```POST /daily/comment/{id}```
 
 - [ ] 댓글 삭제 ```DELETE /daily/comment/{id}/{commentId}```
- 
+
 - [ ] 대댓글 작성 ```POST /daily/recomment/{id}/{commentId}```
- 
+
 - [ ] 대댓글 삭제 ```DELETE /daily/recomment/{id}/{commentId}```
- 
+
 - [ ] 데일리 좋아요 ```POST /daily/like/{id}```
- 
+
 - [ ] 데일리 좋아요 취소 ```DELETE /daily/like/{id}```
- 
+
 - [ ] 댓글 좋아요 ```POST /daily/likecomment/{dailyId}/{commentId}```
- 
+
 - [ ] 댓글 좋아요 취소 ```DELETE /daily/likecomment/{dailyId}/{commentId}```
 
 - [ ] 대댓글 좋아요 ```POST /daily/likerecomment/{dailyId}/{commentId}```

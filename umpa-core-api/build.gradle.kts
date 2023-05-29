@@ -1,3 +1,4 @@
+val mockkVersion: String by project
 
 dependencies {
     implementation(project(":commons:api"))
@@ -13,4 +14,5 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.mockk:mockk:$mockkVersion")
 }
