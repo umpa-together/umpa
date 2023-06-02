@@ -2,7 +2,7 @@ package com.umpa.core.domain.user
 
 import com.umpa.core.support.utils.BcryptPasswordUtils
 
-data class UserCreation(
+data class UserCredential(
     val email: String,
     val password: String
 ) {

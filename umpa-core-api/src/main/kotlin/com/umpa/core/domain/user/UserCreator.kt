@@ -9,11 +9,11 @@ import java.time.LocalDateTime
 class UserCreator(
     private val repository: UserRepository
 ) {
-    fun create(creation: UserCreation): UserEntity {
+    fun create(credential: UserCredential): UserEntity {
         return repository.save(
             UserEntity(
-                email = creation.email,
-                password = creation.getEncryptedPassword(),
+                email = credential.email,
+                password = credential.getEncryptedPassword(),
                 accessedAt = LocalDateTime.now()
             )
         )

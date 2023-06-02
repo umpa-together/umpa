@@ -1,7 +1,10 @@
 package com.umpa.core.controller.v1.auth
 
+import com.umpa.core.controller.v1.auth.request.LoginRequest
 import com.umpa.core.controller.v1.auth.request.SignUpRequest
+import com.umpa.core.controller.v1.auth.response.LoginResponse
 import com.umpa.core.controller.v1.auth.response.SignUpResponse
+import com.umpa.core.domain.auth.AuthorizationService
 import com.umpa.core.domain.user.UserCreateService
 import com.umpa.response.CommonApiResponse
 import jakarta.validation.Valid
@@ -13,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/v1")
 class AuthController(
-    val userCreateService: UserCreateService
+    private val userCreateService: UserCreateService,
+    private val authorizationService: AuthorizationService
 ) {
     @PostMapping("/users")
     fun signUp(
@@ -25,7 +29,12 @@ class AuthController(
     }
 
     @PostMapping("/login")
-    fun login() {
+    fun login(
+        @Valid @RequestBody
+        body: LoginRequest
+    ): CommonApiResponse<LoginResponse> {
+        val result = authorizationService.login(body.toDomain())
+        return CommonApiResponse.success(LoginResponse(result))
     }
 
     @PostMapping("/logout")
