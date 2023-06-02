@@ -3,7 +3,7 @@ package com.umpa.core.controller.v1.auth.request
 import com.umpa.core.domain.user.UserCredential
 import jakarta.validation.constraints.Pattern
 
-data class SignUpRequest(
+data class LoginRequest(
     @field:Pattern(regexp = "^[\\w.-]+@[a-zA-Z_-]+?\\.[a-zA-Z]{2,3}\$", message = "이메일 형식이 올바르지 않습니다.")
     val email: String,
     @field:Pattern(

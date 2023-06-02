@@ -7,9 +7,9 @@ class UserCreateService(
     private val userValidator: UserValidator,
     private val userCreator: UserCreator
 ) {
-    fun create(creation: UserCreation): String {
-        userValidator.validateDuplicateByEmail(creation.email)
-        val user = userCreator.create(creation)
+    fun create(credential: UserCredential): String {
+        userValidator.validateDuplicateByEmail(credential.email)
+        val user = userCreator.create(credential)
         // FIXME return accessToken
         return "accessToken"
     }

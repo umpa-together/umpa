@@ -80,7 +80,7 @@ user
 
 - [x] 회원 가입 ```POST /signUp```
 
-- [ ] 로그인 ```POST /signIn```
+- [x] 로그인 ```POST /signIn```
 
 - [ ] 회원 탈퇴 ```DELETE /withdrawal/{id}```
 

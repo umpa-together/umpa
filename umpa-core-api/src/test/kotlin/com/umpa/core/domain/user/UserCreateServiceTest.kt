@@ -14,11 +14,11 @@ internal class UserCreateServiceTest {
 
     @Test
     fun `동일한 이메일이 존재하면 예외가 발생한다`() {
-        val creation = UserCreation("", "")
+        val credential = UserCredential("", "")
         every { validator.validateDuplicateByEmail(any()) } throws CoreApiException(ErrorType.ALREADY_EXISTS_EMAIL)
 
         assertThrows<CoreApiException> {
-            sut.create(creation)
+            sut.create(credential)
         }
     }
 }
