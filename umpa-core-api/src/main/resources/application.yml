@@ -1,0 +1,6 @@
+spring.application.name: umpa-core-api
+
+spring:
+    config:
+        import:
+            - db.yml
