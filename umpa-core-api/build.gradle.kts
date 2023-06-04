@@ -3,6 +3,8 @@ val mockkVersion: String by project
 dependencies {
     implementation(project(":commons:api"))
 
+    implementation(project(":clients:spotify"))
+
     implementation(project(":storage:db-core"))
 
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")

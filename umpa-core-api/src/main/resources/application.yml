@@ -4,3 +4,4 @@ spring:
     config:
         import:
             - db.yml
+            - spotify.yml
