@@ -1,0 +1,17 @@
+spotify:
+    api:
+        # access-token 발급을 위한 base url. 기본 base_url과 달라서 동적으로 받을 수 있게끔 구현해야 함
+        url: https://accounts.spotify.com
+        client.key: test-client-key
+        secret.key: test-secret-key
+
+feign:
+    client:
+        config:
+            default:
+                connectTimeout: 3000
+                readTimeout: 2000
+
+logging:
+    level:
+        com.umpa.client.spotify: DEBUG

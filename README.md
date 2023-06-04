@@ -4,6 +4,9 @@ UMPA의 서비스들을 통합적으로 관리하는 mono repository
 
 ```Node.js + mongoDB```로 구축한 서버를 ```Kotlin + Spring + RDS``` 기반으로 마이그레이션을 진행합니다.
 
+기존에는 음원 정보를 [Apple Music API](https://developer.apple.com/documentation/applemusicapi)를 이용했지만
+무료로 이용하기 위해 [Spotify API](https://developer.spotify.com/)를 이용합니다.
+
 ***
 
 ## Model
