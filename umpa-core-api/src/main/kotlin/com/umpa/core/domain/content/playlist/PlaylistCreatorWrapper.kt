@@ -1,6 +1,6 @@
 package com.umpa.core.domain.content.playlist
 
-import com.umpa.ContentType
+import com.umpa.commons.enums.ContentType
 import com.umpa.core.domain.feed.FeedCreator
 import com.umpa.core.domain.hashtag.HashtagCreator
 import com.umpa.core.domain.song.SongCreator

@@ -1,4 +1,4 @@
-package com.umpa.user
+package com.umpa.storage.db.core.user
 
 import org.springframework.data.jpa.repository.JpaRepository
 

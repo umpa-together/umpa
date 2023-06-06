@@ -1,6 +1,6 @@
-package com.umpa.playlist
+package com.umpa.storage.db.core.playlist
 
-import com.umpa.BaseEntity
+import com.umpa.storage.db.core.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Table

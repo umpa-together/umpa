@@ -2,7 +2,7 @@ package com.umpa.core.controller.v1.spotiffy
 
 import com.umpa.core.controller.v1.spotiffy.response.SearchResponse
 import com.umpa.core.domain.song.spotify.SpotifyService
-import com.umpa.response.CommonApiResponse
+import com.umpa.commons.api.response.CommonApiResponse
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

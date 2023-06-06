@@ -1,6 +1,6 @@
-package com.umpa.user
+package com.umpa.storage.db.core.user
 
-import com.umpa.BaseEntity
+import com.umpa.storage.db.core.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Table

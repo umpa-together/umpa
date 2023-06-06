@@ -1,7 +1,7 @@
-package com.umpa.song
+package com.umpa.storage.db.core.song
 
-import com.umpa.BaseEntity
-import com.umpa.ContentType
+import com.umpa.storage.db.core.BaseEntity
+import com.umpa.commons.enums.ContentType
 import jakarta.persistence.*
 
 @Entity

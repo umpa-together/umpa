@@ -1,7 +1,7 @@
-package com.umpa.feed
+package com.umpa.storage.db.core.feed
 
-import com.umpa.BaseEntity
-import com.umpa.ContentType
+import com.umpa.storage.db.core.BaseEntity
+import com.umpa.commons.enums.ContentType
 import jakarta.persistence.*
 
 @Entity

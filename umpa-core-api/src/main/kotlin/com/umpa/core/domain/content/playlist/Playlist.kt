@@ -1,6 +1,6 @@
 package com.umpa.core.domain.content.playlist
 
-import com.umpa.playlist.PlaylistEntity
+import com.umpa.storage.db.core.playlist.PlaylistEntity
 import java.time.LocalDateTime
 
 data class Playlist(

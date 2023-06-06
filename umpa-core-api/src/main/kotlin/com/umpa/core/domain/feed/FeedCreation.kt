@@ -1,7 +1,7 @@
 package com.umpa.core.domain.feed
 
-import com.umpa.ContentType
-import com.umpa.feed.FeedEntity
+import com.umpa.commons.enums.ContentType
+import com.umpa.storage.db.core.feed.FeedEntity
 
 data class FeedCreation(
     val uploadUserId: Long,

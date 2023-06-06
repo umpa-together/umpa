@@ -3,7 +3,7 @@ package com.umpa.core.controller.v1.content.playlist
 import com.umpa.core.controller.v1.content.playlist.request.PlaylistCreateRequest
 import com.umpa.core.controller.v1.content.playlist.response.PlaylistDetailResponse
 import com.umpa.core.domain.content.playlist.PlaylistCreateService
-import com.umpa.response.CommonApiResponse
+import com.umpa.commons.api.response.CommonApiResponse
 import jakarta.validation.Valid
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.PostMapping

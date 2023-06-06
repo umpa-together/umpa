@@ -1,8 +1,8 @@
 package com.umpa.core.domain.song
 
-import com.umpa.ContentType
+import com.umpa.commons.enums.ContentType
 import com.umpa.core.domain.song.spotify.AlbumImage
-import com.umpa.song.SongEntity
+import com.umpa.storage.db.core.song.SongEntity
 
 data class SongCreation(
     val uploadUserId: Long,

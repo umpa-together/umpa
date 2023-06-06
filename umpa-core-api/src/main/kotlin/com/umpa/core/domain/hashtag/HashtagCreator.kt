@@ -1,6 +1,6 @@
 package com.umpa.core.domain.hashtag
 
-import com.umpa.hashtag.HashtagRepository
+import com.umpa.storage.db.core.hashtag.HashtagRepository
 import org.springframework.stereotype.Component
 
 @Component

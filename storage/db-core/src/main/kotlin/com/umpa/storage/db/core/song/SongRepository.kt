@@ -1,4 +1,4 @@
-package com.umpa.song
+package com.umpa.storage.db.core.song
 
 import org.springframework.data.jpa.repository.JpaRepository
 

@@ -1,4 +1,4 @@
-package com.umpa
+package com.umpa.storage.db.core
 
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate

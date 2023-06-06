@@ -1,4 +1,4 @@
-package com.umpa.response
+package com.umpa.commons.api.response
 
 data class CommonApiResponse<T> (
     val result: ResultType,

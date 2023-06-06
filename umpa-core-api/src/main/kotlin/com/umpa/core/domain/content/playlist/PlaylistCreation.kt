@@ -1,11 +1,11 @@
 package com.umpa.core.domain.content.playlist
 
-import com.umpa.ContentType
+import com.umpa.commons.enums.ContentType
 import com.umpa.core.domain.feed.FeedCreation
 import com.umpa.core.domain.hashtag.HashtagCreation
 import com.umpa.core.domain.song.SongCreation
 import com.umpa.core.domain.song.spotify.Track
-import com.umpa.playlist.PlaylistEntity
+import com.umpa.storage.db.core.playlist.PlaylistEntity
 import org.springframework.web.multipart.MultipartFile
 
 data class PlaylistCreation(

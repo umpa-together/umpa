@@ -1,6 +1,6 @@
 package com.umpa.core.domain.hashtag
 
-import com.umpa.hashtag.HashtagEntity
+import com.umpa.storage.db.core.hashtag.HashtagEntity
 
 data class HashtagCreation(
     val hashtag: String,

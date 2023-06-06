@@ -1,6 +1,6 @@
 package com.umpa.core.domain.feed
 
-import com.umpa.feed.FeedRepository
+import com.umpa.storage.db.core.feed.FeedRepository
 import org.springframework.stereotype.Component
 
 @Component

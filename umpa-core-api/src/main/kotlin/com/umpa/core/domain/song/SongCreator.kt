@@ -1,6 +1,6 @@
 package com.umpa.core.domain.song
 
-import com.umpa.song.SongRepository
+import com.umpa.storage.db.core.song.SongRepository
 import org.springframework.stereotype.Component
 
 @Component
