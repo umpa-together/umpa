@@ -5,8 +5,8 @@ import java.time.LocalDateTime
 
 data class Playlist(
     val id: Long,
-    val createdAt: LocalDateTime?,
-    val updatedAt: LocalDateTime?,
+    val createdAt: LocalDateTime,
+    val updatedAt: LocalDateTime,
     val userId: Long,
     val title: String,
     val content: String,
@@ -20,8 +20,8 @@ data class Playlist(
         fun fromEntity(entity: PlaylistEntity): Playlist {
             return Playlist(
                 id = entity.id,
-                createdAt = entity.createdAt,
-                updatedAt = entity.updatedAt,
+                createdAt = entity.createdAt ?: LocalDateTime.now(),
+                updatedAt = entity.updatedAt ?: LocalDateTime.now(),
                 userId = entity.userId,
                 title = entity.title,
                 content = entity.content,

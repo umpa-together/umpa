@@ -1,15 +1,30 @@
 package com.umpa.core.domain.content.playlist
 
 import org.springframework.stereotype.Service
+import org.springframework.web.multipart.MultipartFile
 
 @Service
 class PlaylistCreateService(
-    private val playlistCreator: PlaylistCreator
+    private val playlistCreator: PlaylistCreatorWrapper
 ) {
-    fun create(creation: PlaylistCreation) {
-        val playlist = Playlist.fromEntity(playlistCreator.create(creation))
-        // TODO 피드, 해시태그, 담은 곡 생성
-        // feedCreator.create()
-        // hashtagCreator.create(creation.hashtags)
+    fun create(creation: PlaylistCreation): PlaylistDetail {
+        val playlist = playlistCreator.create(creation)
+
+        // TODO 이미지 업로드
+//        creation.image?.let {
+//            val uploadedImageUrl = imageUploadAndUpdate(it)
+//            savedPlaylist.uploadImage(uploadedImageUrl)
+//        }
+
+        return PlaylistDetail(
+            playlist = playlist,
+            songs = creation.songs,
+            hashtags = creation.hashtags
+//            comments =
+        )
+    }
+
+    private fun imageUploadAndUpdate(image: MultipartFile): String {
+        return "url"
     }
 }

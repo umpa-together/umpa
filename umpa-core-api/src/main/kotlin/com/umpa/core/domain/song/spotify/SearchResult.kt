@@ -4,13 +4,13 @@ import com.umpa.client.spotify.response.TrackResponse
 
 data class SearchResult(
     val next: String?,
-    val tracks: List<Track>
+    val songs: List<Track>
 ) {
     companion object {
         fun fromTrackResponse(response: TrackResponse): SearchResult {
             return SearchResult(
                 next = response.next,
-                tracks = response.items.map { Track.fromTrackDetailResponse(it) }
+                songs = response.items.map { Track.fromTrackDetailResponse(it) }
             )
         }
     }
