@@ -2,6 +2,7 @@ rootProject.name = "umpa"
 
 include(
     "commons:api",
+    "commons:enums",
     "clients:spotify",
     "umpa-core-api",
     "storage:db-core"
