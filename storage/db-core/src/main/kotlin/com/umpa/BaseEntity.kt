@@ -3,9 +3,11 @@ package com.umpa
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
+import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.time.LocalDateTime
 
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener::class)
 abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,9 +16,11 @@ abstract class BaseEntity {
 
     @Column(name = "created_at", updatable = false)
     @CreatedDate
-    val createdAt: LocalDateTime? = null
+    var createdAt: LocalDateTime = LocalDateTime.now()
+        private set
 
     @Column(name = "updated_at")
     @LastModifiedDate
-    val updatedAt: LocalDateTime? = null
+    var updatedAt: LocalDateTime = LocalDateTime.now()
+        private set
 }
