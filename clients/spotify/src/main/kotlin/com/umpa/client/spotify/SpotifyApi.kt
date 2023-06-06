@@ -4,7 +4,7 @@ import com.umpa.client.spotify.auth.BasicAuth
 import com.umpa.client.spotify.auth.BearerAuth
 import com.umpa.client.spotify.enums.FilterType
 import com.umpa.client.spotify.response.AccessTokenResponse
-import com.umpa.client.spotify.response.SearchResponse
+import com.umpa.client.spotify.response.SpotifySearchResponse
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
@@ -41,5 +41,5 @@ interface SpotifyApi {
         @RequestParam type: String = FilterType.TRACK.name.lowercase(),
         @RequestParam limit: Int? = 20,
         @RequestParam offset: Int? = 0
-    ): SearchResponse
+    ): SpotifySearchResponse
 }

@@ -1,5 +1,5 @@
 package com.umpa.client.spotify.response
 
-data class SearchResponse(
+data class SpotifySearchResponse(
     val tracks: TrackResponse
 )

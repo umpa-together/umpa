@@ -10,7 +10,7 @@ data class ArtistResponse(
     val href: String?,
     val id: String?,
     val images: List<ImageResponse>?,
-    val name: String?,
+    val name: String,
     val popularity: Int?,
     val type: String?,
     val uri: String?
