@@ -2,7 +2,7 @@ name: run-test
  
 on:
   pull_request:
-    branches: [ master, develop ] # master, develop branch에 PR을 보낼 때 실행
+    branches: [master] # master, develop branch에 PR을 보낼 때 실행
     
 jobs:
   test:
