@@ -32,4 +32,15 @@ class CommentController(
         commentService.remove(CommentRemoval(contentId = id, commentId = commentId, userId = 0L))
         return CommonApiResponse.success()
     }
+
+    @PostMapping("/{id}/comments/{commentId}/re-comments")
+    fun createReComment(
+        @PathVariable id: Long,
+        @PathVariable commentId: Long,
+        @RequestBody body: CreateCommentRequest
+    ): CommonApiResponse<Nothing> {
+        // TODO 헤더로 넘어온 access-token에서 userId resolve해서 넘겨주어야 함
+        commentService.create(body.toDomain(userId = 0L, contentId = id, parentCommentId = commentId))
+        return CommonApiResponse.success()
+    }
 }
