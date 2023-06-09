@@ -186,9 +186,9 @@ likes
 
 - [ ] 플레이리스트 상세 조회 ```GET /playlist/{id}/{postUserId}```
 
-- [ ] 댓글 작성 ```POST /playlist/comment/{id}```
+- [x] 댓글 작성 ```POST /playlist/comment/{id}```
 
-- [ ] 댓글 삭제 ```DELETE /playlist/comment/{id}/{commentId}```
+- [x] 댓글 삭제 ```DELETE /playlist/comment/{id}/{commentId}```
 
 - [ ] 대댓글 작성 ```POST /playlist/recomment/{id}/{commentId}```
 
