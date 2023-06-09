@@ -15,8 +15,8 @@ class CommentWriter(
     }
 
     @Transactional
-    fun deleteByContentId(contentId: Long) {
-        commentRepository.readByContentId(contentId)?.apply {
+    fun deleteByContentId(id: Long) {
+        commentRepository.readById(id)?.apply {
             this.isDeleted = true
         } ?: throw CoreApiException(ErrorType.NOT_FOUND_COMMENT)
     }

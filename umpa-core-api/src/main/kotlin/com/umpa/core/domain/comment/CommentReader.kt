@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component
 class CommentReader(
     private val commentRepository: CommentRepository
 ) {
-    fun readByContentId(contentId: Long): Comment {
-        return commentRepository.readByContentId(contentId)?.let {
+    fun readById(id: Long): Comment {
+        return commentRepository.readById(id)?.let {
             Comment.fromEntity(it)
         } ?: throw CoreApiException(ErrorType.NOT_FOUND_COMMENT)
     }
