@@ -2,8 +2,8 @@ package com.umpa.core.domain.user
 
 import com.umpa.core.support.exceptions.CoreApiException
 import com.umpa.core.support.exceptions.ErrorType
-import com.umpa.user.UserEntity
-import com.umpa.user.UserRepository
+import com.umpa.storage.db.core.user.UserEntity
+import com.umpa.storage.db.core.user.UserRepository
 import org.springframework.stereotype.Component
 
 @Component

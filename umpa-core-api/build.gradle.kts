@@ -2,6 +2,7 @@ val mockkVersion: String by project
 
 dependencies {
     implementation(project(":commons:api"))
+    implementation(project(":commons:enums"))
 
     implementation(project(":clients:spotify"))
 

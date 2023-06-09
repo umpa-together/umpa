@@ -1,6 +1,6 @@
 package com.umpa.core.domain.user
 
-import com.umpa.user.UserEntity
+import com.umpa.storage.db.core.user.UserEntity
 import java.time.LocalDateTime
 
 data class User(

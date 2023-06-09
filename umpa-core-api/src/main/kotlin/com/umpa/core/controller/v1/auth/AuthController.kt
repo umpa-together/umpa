@@ -6,7 +6,7 @@ import com.umpa.core.controller.v1.auth.response.LoginResponse
 import com.umpa.core.controller.v1.auth.response.SignUpResponse
 import com.umpa.core.domain.auth.AuthorizationService
 import com.umpa.core.domain.user.UserCreateService
-import com.umpa.response.CommonApiResponse
+import com.umpa.commons.api.response.CommonApiResponse
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

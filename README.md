@@ -43,6 +43,7 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ```
 user
+playlist
 
 ... TBD
 ```
@@ -69,15 +70,15 @@ user
 
 ### appleMusicRoutes
 
-- [ ] 곡 검색 ```GET /searchMusic/song/{songName}```
+- [x] 곡 검색 ```GET /searchMusic/song/{songName}```
 
-- [ ] 아티스트 검색 ```GET /searchMusic/artist/{artistName}```
+- [x] ~~아티스트 검색 ```GET /searchMusic/artist/{artistName}```~~
 
-- [ ] 앨범 검색 ```GET /searchMusic/album/{albumName}```
+- [x] ~~앨범 검색 ```GET /searchMusic/album/{albumName}```~~
 
-- [ ] 다음 페이지 조회 ```GET /searchMusic/next/{next}```
-
-- [ ] 힌트 조회 ```GET /searchMusic/hint/{term}```
+- [x] 다음 페이지 조회 ```GET /searchMusic/next/{next}```
+  - <u>곡 검색과 통합</u>
+- [x] ~~힌트 조회 ```GET /searchMusic/hint/{term}```~~
 
 ### authRoutes
 
