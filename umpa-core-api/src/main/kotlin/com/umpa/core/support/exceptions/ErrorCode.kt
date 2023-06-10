@@ -9,6 +9,7 @@ enum class ErrorCode {
     E4031,
     E4032,
     E4033,
+    E4034,
 
     E4040,
     E4041,
