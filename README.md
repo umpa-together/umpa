@@ -42,9 +42,13 @@ User
 RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ```
-user
-playlist
-likes
+- user
+- content
+  - playlist
+- comments
+  - comment
+  - re-comment
+- likes
 ... TBD
 ```
 
