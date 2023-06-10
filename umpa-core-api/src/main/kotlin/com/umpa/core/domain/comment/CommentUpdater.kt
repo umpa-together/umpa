@@ -7,13 +7,9 @@ import jakarta.transaction.Transactional
 import org.springframework.stereotype.Component
 
 @Component
-class CommentWriter(
+class CommentUpdater (
     private val commentRepository: CommentRepository
-) {
-    fun write(creation: CommentCreation) {
-        commentRepository.save(creation.toEntity())
-    }
-
+){
     @Transactional
     fun deleteByContentId(id: Long) {
         commentRepository.readById(id)?.apply {
