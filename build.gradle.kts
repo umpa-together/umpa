@@ -22,6 +22,13 @@ allprojects {
     }
 }
 
+dependencyManagement {
+    val springCloudVersion: String by project
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+    }
+}
+
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jetbrains.kotlin.kapt")

@@ -1,0 +1,19 @@
+spotify:
+    api:
+        # access-token 발급을 위한 base url
+        authorization.url: https://accounts.spotify.com
+        # 기본 base url
+        url: https://api.spotify.com
+        client.key: test-client-key
+        secret.key: test-secret-key
+
+feign:
+    client:
+        config:
+            default:
+                connectTimeout: 3000
+                readTimeout: 2000
+
+logging:
+    level:
+        com.umpa.client.spotify: DEBUG

@@ -4,6 +4,9 @@ UMPA의 서비스들을 통합적으로 관리하는 mono repository
 
 ```Node.js + mongoDB```로 구축한 서버를 ```Kotlin + Spring + RDS``` 기반으로 마이그레이션을 진행합니다.
 
+기존에는 음원 정보를 [Apple Music API](https://developer.apple.com/documentation/applemusicapi)를 이용했지만
+무료로 이용하기 위해 [Spotify API](https://developer.spotify.com/)를 이용합니다.
+
 ***
 
 ## Model
@@ -39,8 +42,13 @@ User
 RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ```
-user
-
+- user
+- content
+  - playlist
+- comments
+  - comment
+  - re-comment
+- likes
 ... TBD
 ```
 
@@ -66,15 +74,15 @@ user
 
 ### appleMusicRoutes
 
-- [ ] 곡 검색 ```GET /searchMusic/song/{songName}```
+- [x] 곡 검색 ```GET /searchMusic/song/{songName}```
 
-- [ ] 아티스트 검색 ```GET /searchMusic/artist/{artistName}```
+- [x] ~~아티스트 검색 ```GET /searchMusic/artist/{artistName}```~~
 
-- [ ] 앨범 검색 ```GET /searchMusic/album/{albumName}```
+- [x] ~~앨범 검색 ```GET /searchMusic/album/{albumName}```~~
 
-- [ ] 다음 페이지 조회 ```GET /searchMusic/next/{next}```
-
-- [ ] 힌트 조회 ```GET /searchMusic/hint/{term}```
+- [x] 다음 페이지 조회 ```GET /searchMusic/next/{next}```
+  - <u>곡 검색과 통합</u>
+- [x] ~~힌트 조회 ```GET /searchMusic/hint/{term}```~~
 
 ### authRoutes
 
@@ -182,25 +190,25 @@ user
 
 - [ ] 플레이리스트 상세 조회 ```GET /playlist/{id}/{postUserId}```
 
-- [ ] 댓글 작성 ```POST /playlist/comment/{id}```
+- [x] 댓글 작성 ```POST /playlists/{id}/comments```
 
-- [ ] 댓글 삭제 ```DELETE /playlist/comment/{id}/{commentId}```
+- [x] 댓글 삭제 ```DELETE /playlists/{id}/comments/{commentId}```
 
-- [ ] 대댓글 작성 ```POST /playlist/recomment/{id}/{commentId}```
+- [x] 대댓글 작성 ```POST /playlists/{id}/comments/{commentId}/re-comments```
 
-- [ ] 대댓글 삭제 ```DELETE /playlist/recomment/{id}/{commentId}```
+- [x] 대댓글 삭제 ```DELETE /playlists/{id}/comments/{commentId}/re-comments/{recommentId}```
 
-- [ ] 플레이리스트 좋아요 ```POST /playlist/like/{id}```
+- [x] 플레이리스트 좋아요 ```POST /v1/playlists/{id}/likes```
 
-- [ ] 플레이리스트 좋아요 취소 ```DELETE /playlist/like/{id}```
+- [x] 플레이리스트 좋아요 취소 ```DELETE /playlists/{id}/likes```
 
-- [ ] 댓글 좋아요 ```POST /playlist/likecomment/{playlistId}/{commentId}```
+- [x] 댓글 좋아요 ```POST /comments/{id}/likes```
 
-- [ ] 댓글 좋아요 취소 ```DELETE /playlist/likecomment/{playlistId}/{commentId}```
+- [x] 댓글 좋아요 취소 ```DELETE /comments/{id}/likes```
 
-- [ ] 대댓글 좋아요 ```POST /playlist/likerecomment/{playlistId}/{commentId}```
+- [x] 대댓글 좋아요 ```POST /re-comments/{id}/likes```
 
-- [ ] 대댓글 좋아요 취소 ```POST /playlist/likerecomment/{playlistId}/{commentId}```
+- [x] 대댓글 좋아요 취소 ```DELETE /re-comments/{id}/likes```
 
 ### relayRoutes
 
