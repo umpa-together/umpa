@@ -42,9 +42,13 @@ User
 RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ```
-user
-playlist
-likes
+- user
+- content
+  - playlist
+- comments
+  - comment
+  - re-comment
+- likes
 ... TBD
 ```
 
@@ -186,13 +190,13 @@ likes
 
 - [ ] 플레이리스트 상세 조회 ```GET /playlist/{id}/{postUserId}```
 
-- [ ] 댓글 작성 ```POST /playlist/comment/{id}```
+- [x] 댓글 작성 ```POST /playlists/{id}/comments```
 
-- [ ] 댓글 삭제 ```DELETE /playlist/comment/{id}/{commentId}```
+- [x] 댓글 삭제 ```DELETE /playlists/{id}/comments/{commentId}```
 
-- [ ] 대댓글 작성 ```POST /playlist/recomment/{id}/{commentId}```
+- [x] 대댓글 작성 ```POST /playlists/{id}/comments/{commentId}/re-comments```
 
-- [ ] 대댓글 삭제 ```DELETE /playlist/recomment/{id}/{commentId}```
+- [x] 대댓글 삭제 ```DELETE /playlists/{id}/comments/{commentId}/re-comments/{recommentId}```
 
 - [x] 플레이리스트 좋아요 ```POST /v1/playlists/{id}/likes```
 
