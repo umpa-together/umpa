@@ -14,7 +14,7 @@ class CommentService(
     }
 
     fun remove(removal: CommentRemoval) {
-        val comment = commentReader.readById(removal.contentId)
+        val comment = commentReader.readById(removal.contentId).let { Comment.fromEntity(it) }
         removal.validate(comment)
         commentUpdater.deleteByContentId(removal.commentId)
         // TODO notice도 delete
