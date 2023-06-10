@@ -8,6 +8,8 @@ enum class ErrorType(val statusCode: HttpStatus, val errorCode: ErrorCode, val m
     NOT_SUPPORTED_SPC_PATTERN(HttpStatus.BAD_REQUEST, ErrorCode.E4002, "특수문자를 포함할 수 없습니다. 한글, 영문, 숫자로 입력해주세요"),
 
     BAD_CREDENTIALS(HttpStatus.FORBIDDEN, ErrorCode.E4030, "입력하신 비밀번호와 일치하지 않습니다."),
+    FORBIDDEN_UNLIKE(HttpStatus.FORBIDDEN, ErrorCode.E4031, "좋아요를 취소할 수 없습니다."),
 
-    NOT_FOUND_USER_EMAIL(HttpStatus.NOT_FOUND, ErrorCode.E4040, "해당 이메일과 일치하는 유저를 찾을 수 없습니다.")
+    NOT_FOUND_USER_EMAIL(HttpStatus.NOT_FOUND, ErrorCode.E4040, "해당 이메일과 일치하는 유저를 찾을 수 없습니다."),
+    NOT_FOUND_LIKES(HttpStatus.NOT_FOUND, ErrorCode.E4041, "해당 좋아요를 찾을 수 없습니다.")
 }

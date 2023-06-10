@@ -44,7 +44,7 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 ```
 user
 playlist
-
+likes
 ... TBD
 ```
 
@@ -194,17 +194,17 @@ playlist
 
 - [ ] 대댓글 삭제 ```DELETE /playlist/recomment/{id}/{commentId}```
 
-- [ ] 플레이리스트 좋아요 ```POST /playlist/like/{id}```
+- [x] 플레이리스트 좋아요 ```POST /v1/playlists/{id}/likes```
 
-- [ ] 플레이리스트 좋아요 취소 ```DELETE /playlist/like/{id}```
+- [x] 플레이리스트 좋아요 취소 ```DELETE /playlists/{id}/likes```
 
-- [ ] 댓글 좋아요 ```POST /playlist/likecomment/{playlistId}/{commentId}```
+- [x] 댓글 좋아요 ```POST /comments/{id}/likes```
 
-- [ ] 댓글 좋아요 취소 ```DELETE /playlist/likecomment/{playlistId}/{commentId}```
+- [x] 댓글 좋아요 취소 ```DELETE /comments/{id}/likes```
 
-- [ ] 대댓글 좋아요 ```POST /playlist/likerecomment/{playlistId}/{commentId}```
+- [x] 대댓글 좋아요 ```POST /re-comments/{id}/likes```
 
-- [ ] 대댓글 좋아요 취소 ```POST /playlist/likerecomment/{playlistId}/{commentId}```
+- [x] 대댓글 좋아요 취소 ```DELETE /re-comments/{id}/likes```
 
 ### relayRoutes
 
