@@ -6,6 +6,8 @@ enum class ErrorCode {
     E4002,
 
     E4030,
+    E4031,
 
-    E4040
+    E4040,
+    E4041
 }
