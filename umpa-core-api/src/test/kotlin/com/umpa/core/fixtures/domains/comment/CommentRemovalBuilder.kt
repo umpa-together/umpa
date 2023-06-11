@@ -13,7 +13,7 @@ class CommentRemovalBuilder(
             contentId = contentId,
             commentId = commentId,
             parentCommentId = parentCommentId,
-            userId = userId,
+            userId = userId
         )
     }
 }
