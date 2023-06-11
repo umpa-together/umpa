@@ -1,5 +1,6 @@
 val mockkVersion: String by project
 val kotestVersion: String by project
+val jwtVersion: String by project
 
 dependencies {
     implementation(project(":commons:api"))
@@ -16,6 +17,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    implementation("io.jsonwebtoken:jjwt-api:$jwtVersion")
+    implementation("io.jsonwebtoken:jjwt-impl:$jwtVersion")
+    implementation("io.jsonwebtoken:jjwt-jackson:$jwtVersion")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.mockk:mockk:$mockkVersion")
