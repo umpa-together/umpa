@@ -3,7 +3,7 @@ package com.umpa.core.domain.auth
 import com.umpa.core.domain.user.UserCredential
 import com.umpa.core.domain.user.UserReader
 import com.umpa.core.domain.user.UserValidator
-import com.umpa.core.fixtures.user.UserEntityBuilder
+import com.umpa.core.fixtures.entity.user.UserEntityBuilder
 import com.umpa.core.support.exceptions.CoreApiException
 import com.umpa.core.support.exceptions.ErrorType
 import io.mockk.every

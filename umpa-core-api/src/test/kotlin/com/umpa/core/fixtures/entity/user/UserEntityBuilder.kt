@@ -1,4 +1,4 @@
-package com.umpa.core.fixtures.user
+package com.umpa.core.fixtures.entity.user
 
 import com.umpa.storage.db.core.user.UserEntity
 import java.time.LocalDateTime
