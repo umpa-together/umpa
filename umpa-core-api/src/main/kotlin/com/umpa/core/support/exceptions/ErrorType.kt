@@ -7,6 +7,8 @@ enum class ErrorType(val statusCode: HttpStatus, val errorCode: ErrorCode, val m
     NOT_SUPPORTED_SONGS_COUNT(HttpStatus.BAD_REQUEST, ErrorCode.E4001, "플레이리스트 등록할 곡은 최소 3개 최대 8개입니다."),
     NOT_SUPPORTED_SPC_PATTERN(HttpStatus.BAD_REQUEST, ErrorCode.E4002, "특수문자를 포함할 수 없습니다. 한글, 영문, 숫자로 입력해주세요"),
 
+    INVALID_TOKEN(HttpStatus.UNAUTHORIZED, ErrorCode.E4010, "유효하지 않은 토큰입니다."),
+
     BAD_CREDENTIALS(HttpStatus.FORBIDDEN, ErrorCode.E4030, "입력하신 비밀번호와 일치하지 않습니다."),
     FORBIDDEN_CONTENT_ID(HttpStatus.FORBIDDEN, ErrorCode.E4031, "해당 컨텐츠와 일치하지 않습니다."),
     FORBIDDEN_USER_ID(HttpStatus.FORBIDDEN, ErrorCode.E4032, "해당 유저와 일치하지 않습니다."),

@@ -23,7 +23,12 @@ internal class CommentServiceTest {
         "0,1,,FORBIDDEN_USER_ID",
         "0,0,0,FORBIDDEN_PARENT_COMMENT_ID"
     )
-    fun `comment 제거할 때, removal 검증에 실패하면 에러가 발생한다`(contentId: Long, userId: Long, parentCommentId: Long?, errorType: ErrorType) {
+    fun `comment 제거할 때, removal 검증에 실패하면 에러가 발생한다`(
+        contentId: Long,
+        userId: Long,
+        parentCommentId: Long?,
+        errorType: ErrorType
+    ) {
         val removal = CommentRemovalBuilder(
             parentCommentId = parentCommentId
         ).build()

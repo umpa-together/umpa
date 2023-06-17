@@ -86,9 +86,9 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ### authRoutes
 
-- [x] 회원 가입 ```POST /signUp```
+- [x] 회원 가입 ```POST /users```
 
-- [x] 로그인 ```POST /signIn```
+- [x] 로그인 ```POST /login```
 
 - [ ] 회원 탈퇴 ```DELETE /withdrawal/{id}```
 
