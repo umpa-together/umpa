@@ -8,10 +8,10 @@ import jakarta.persistence.*
 @Table(name = "song")
 class SongEntity(
     @Column(name = "ref_user_id")
-    val uploadUserId: Long,
+    val userId: Long,
 
     @Column(name = "ref_content_id")
-    val contentId: Long,
+    val contentId: Long?,
 
     @Column(name = "spotify_track_id")
     val spotifyTrackId: String,
@@ -33,7 +33,7 @@ class SongEntity(
 
     @Column(name = "content_type")
     @Enumerated(value = EnumType.STRING)
-    val contentType: ContentType,
+    val contentType: ContentType?,
 
     @Column(name = "is_deleted")
     var isDeleted: Boolean = false

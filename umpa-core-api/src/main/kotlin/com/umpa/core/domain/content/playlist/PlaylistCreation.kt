@@ -27,7 +27,7 @@ data class PlaylistCreation(
     fun toSongCreations(contentId: Long, contentType: ContentType): List<SongCreation> {
         return songs.map {
             SongCreation(
-                uploadUserId = userId,
+                userId = userId,
                 contentId = contentId,
                 id = it.id,
                 name = it.name,
