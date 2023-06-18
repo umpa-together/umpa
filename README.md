@@ -180,7 +180,7 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ### playlistRoutes
 
-- [ ] 플레이리스트 생성 ```POST /playlist/```
+- [ ] 플레이리스트 생성 ```POST /playlists/```
 
 - [ ] 플레이리스트 수정 ```POST /playlist/edit```
 

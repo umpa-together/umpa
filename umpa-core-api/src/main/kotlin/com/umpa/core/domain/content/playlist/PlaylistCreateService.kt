@@ -19,8 +19,8 @@ class PlaylistCreateService(
         return PlaylistDetail(
             playlist = playlist,
             songs = creation.songs,
-            hashtags = creation.hashtags
-//            comments =
+            hashtags = creation.hashtags,
+            comments = emptyList()
         )
     }
 
