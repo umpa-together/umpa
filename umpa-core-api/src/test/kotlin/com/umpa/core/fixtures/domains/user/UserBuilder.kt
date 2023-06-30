@@ -1,6 +1,7 @@
 package com.umpa.core.fixtures.domains.user
 
 import com.umpa.core.domain.user.User
+import com.umpa.core.support.constants.ImageConstants
 import java.time.LocalDateTime
 
 class UserBuilder(
@@ -13,7 +14,7 @@ class UserBuilder(
     val nickName: String? = "",
     val realName: String? = null,
     val introduction: String? = null,
-    val profileImage: String? = null,
+    val profileImage: String = ImageConstants.DEFAULT_PROFILE_IMAGE,
     val backgroundImage: String? = null,
     val accessedAt: LocalDateTime? = LocalDateTime.now()
 ) {
@@ -30,7 +31,7 @@ class UserBuilder(
             introduction = introduction,
             profileImage = profileImage,
             backgroundImage = backgroundImage,
-            accessedAt = accessedAt,
+            accessedAt = accessedAt
         )
     }
 }
