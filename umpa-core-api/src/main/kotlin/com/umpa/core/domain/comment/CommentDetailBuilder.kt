@@ -22,7 +22,10 @@ object CommentDetailBuilder {
     private fun aggregateCommentAndReComment(comments: List<CommentDetail>, reComments: List<ReCommentDetail>): List<CommentDetail> {
         val reCommentsGroupByParentComment = reComments.groupBy { it.parentCommentId }
         comments.forEach {
-            it.updateReComments(reCommentsGroupByParentComment[it.id]!!)
+            val target = reCommentsGroupByParentComment[it.id]
+            if (target != null) {
+                it.updateReComments(target)
+            }
         }
         return comments
     }
