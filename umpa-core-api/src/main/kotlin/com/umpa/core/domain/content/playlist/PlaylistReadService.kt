@@ -5,11 +5,18 @@ import org.springframework.stereotype.Service
 @Service
 class PlaylistReadService(
     private val playlistReader: PlaylistReader,
-    private val playlistDetailFiller: PlaylistDetailFiller
+    private val playlistDetailFiller: PlaylistDetailFiller,
+    private val playlistUpdater: PlaylistUpdater
 ) {
-    fun readById(id: Long): PlaylistDetail {
+    fun readById(id: Long, userId: Long): PlaylistDetail {
         val playlist = playlistReader.readById(id)
-        // TODO 내가 만든 플리가 아니면 view + 1
+        increaseViewCountIfPostUserIsOther(playlist, userId)
         return playlistDetailFiller.fill(playlist)
+    }
+
+    private fun increaseViewCountIfPostUserIsOther(playlist: Playlist, userId: Long) {
+        if (playlist.isNotMyPlaylist(userId)) {
+            playlistUpdater.increaseViewCount(playlist.id)
+        }
     }
 }

@@ -38,7 +38,8 @@ class PlaylistController(
     fun getDetail(
         @PathVariable id: Long
     ): CommonApiResponse<PlaylistDetailResponse> {
-        val result = playlistReadService.readById(id)
+        // TODO 헤더로 넘어온 access-token에서 userId resolve해서 넘겨주어야 함
+        val result = playlistReadService.readById(id, 0L)
         return CommonApiResponse.success(PlaylistDetailResponse.fromPlaylistDetail(result))
     }
 }
