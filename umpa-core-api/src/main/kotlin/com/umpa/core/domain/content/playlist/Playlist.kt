@@ -20,8 +20,8 @@ data class Playlist(
         fun fromEntity(entity: PlaylistEntity): Playlist {
             return Playlist(
                 id = entity.id,
-                createdAt = entity.createdAt ?: LocalDateTime.now(),
-                updatedAt = entity.updatedAt ?: LocalDateTime.now(),
+                createdAt = entity.createdAt,
+                updatedAt = entity.updatedAt,
                 userId = entity.userId,
                 title = entity.title,
                 content = entity.content,
