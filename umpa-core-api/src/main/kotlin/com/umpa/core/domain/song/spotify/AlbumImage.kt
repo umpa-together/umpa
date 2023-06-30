@@ -4,8 +4,8 @@ import com.umpa.client.spotify.response.ImageResponse
 
 data class AlbumImage(
     val url: String,
-    val height: Int,
-    val width: Int
+    val height: Int = 640,
+    val width: Int = 640
 ) {
     companion object {
         fun fromImageResponse(response: ImageResponse): AlbumImage {
