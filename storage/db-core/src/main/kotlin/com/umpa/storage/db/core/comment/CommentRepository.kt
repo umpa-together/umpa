@@ -4,4 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface CommentRepository : JpaRepository<CommentEntity, Long> {
     fun readById(id: Long): CommentEntity?
+
+    fun findAllByContentIdAndIsDeletedIsFalse(contentId: Long): List<CommentEntity>
 }

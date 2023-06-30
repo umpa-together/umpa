@@ -30,4 +30,12 @@ data class Comment(
             )
         }
     }
+
+    fun isParentComment(): Boolean {
+        return parentCommentId == null
+    }
+
+    fun isReComment(): Boolean {
+        return parentCommentId != null
+    }
 }
