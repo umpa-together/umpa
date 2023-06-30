@@ -19,5 +19,6 @@ enum class ErrorType(val statusCode: HttpStatus, val errorCode: ErrorCode, val m
     NOT_FOUND_USER_EMAIL(HttpStatus.NOT_FOUND, ErrorCode.E4040, "해당 이메일과 일치하는 유저를 찾을 수 없습니다."),
     NOT_FOUND_COMMENT(HttpStatus.NOT_FOUND, ErrorCode.E4041, "해당 댓글을 찾을 수 없습니다."),
     NOT_FOUND_LIKES(HttpStatus.NOT_FOUND, ErrorCode.E4042, "해당 좋아요를 찾을 수 없습니다."),
-    NOT_FOUND_PLAYLIST(HttpStatus.NOT_FOUND, ErrorCode.E4043, "해당 플레이리스트를 찾을 수 없습니다.")
+    NOT_FOUND_PLAYLIST(HttpStatus.NOT_FOUND, ErrorCode.E4043, "해당 플레이리스트를 찾을 수 없습니다."),
+    NOT_FOUND_USER(HttpStatus.NOT_FOUND, ErrorCode.E4044, "해당 회원을 찾을 수 없습니다.")
 }

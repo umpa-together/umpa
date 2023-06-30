@@ -17,5 +17,6 @@ enum class ErrorCode {
     E4040,
     E4041,
     E4042,
-    E4043
+    E4043,
+    E4044
 }

@@ -1,15 +1,17 @@
 package com.umpa.core.domain.content.playlist
 
+import com.umpa.core.domain.user.UserReader
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
 
 @Service
 class PlaylistCreateService(
-    private val playlistCreator: PlaylistCreatorWrapper
+    private val playlistCreator: PlaylistCreatorWrapper,
+    private val userReader: UserReader
 ) {
     fun create(creation: PlaylistCreation): PlaylistDetail {
         val playlist = playlistCreator.create(creation)
-
+        val user = userReader.readById(playlist.userId)
         // TODO 이미지 업로드
 //        creation.image?.let {
 //            val uploadedImageUrl = imageUploadAndUpdate(it)
@@ -18,6 +20,7 @@ class PlaylistCreateService(
 
         return PlaylistDetail(
             playlist = playlist,
+            postUser = user,
             songs = creation.songs,
             hashtags = creation.hashtags,
             comments = emptyList()
