@@ -52,7 +52,7 @@ class CommentDetailBuilderTest {
     fun `댓글을 작성한 유저의 프로필이 세팅된다`() {
         val comments = listOf(
             CommentBuilder(id = 1, userId = 2L).build(),
-            CommentBuilder(id = 2, userId = 1L).build(),
+            CommentBuilder(id = 2, userId = 1L).build()
         )
         val users = listOf(
             UserBuilder(id = 1L, nickName = "firstUser").build(),

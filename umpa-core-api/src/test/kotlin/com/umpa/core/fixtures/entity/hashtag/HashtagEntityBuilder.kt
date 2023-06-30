@@ -11,7 +11,7 @@ class HashtagEntityBuilder(
         return HashtagEntity(
             hashtag = hashtag,
             contentId = contentId,
-            isDeleted = isDeleted,
+            isDeleted = isDeleted
         )
     }
 }

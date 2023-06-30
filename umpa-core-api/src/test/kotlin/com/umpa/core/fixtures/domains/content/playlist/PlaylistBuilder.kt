@@ -28,7 +28,7 @@ class PlaylistBuilder(
             youtubeUrl = youtubeUrl,
             accessedAt = accessedAt,
             viewCount = viewCount,
-            isDeleted = isDeleted,
+            isDeleted = isDeleted
         )
     }
 }

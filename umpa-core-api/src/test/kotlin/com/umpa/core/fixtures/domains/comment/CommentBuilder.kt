@@ -25,7 +25,7 @@ class CommentBuilder(
             comment = comment,
             parentCommentId = parentCommentId,
             contentType = contentType,
-            isDeleted = isDeleted,
+            isDeleted = isDeleted
         )
     }
 }
