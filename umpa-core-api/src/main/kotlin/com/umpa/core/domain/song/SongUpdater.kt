@@ -30,4 +30,10 @@ class SongUpdater(
             songCreator.create(addTargetSongs)
         }
     }
+
+    @Transactional
+    fun delete(contentId: Long) {
+        songRepository.findAllByContentId(contentId)
+            .forEach { it.delete() }
+    }
 }

@@ -23,4 +23,11 @@ class PlaylistUpdater(
             ?.let { Playlist.fromEntity(it) }
             ?: throw CoreApiException(ErrorType.NOT_FOUND_PLAYLIST)
     }
+
+    @Transactional
+    fun delete(id: Long) {
+        playlistRepository.findByIdOrNull(id)
+            ?.apply { this.delete() }
+            ?: throw CoreApiException(ErrorType.NOT_FOUND_PLAYLIST)
+    }
 }

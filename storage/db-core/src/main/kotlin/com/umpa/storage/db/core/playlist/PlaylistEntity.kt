@@ -31,7 +31,7 @@ class PlaylistEntity(
     var viewCount: Long = 0L,
 
     @Column(name = "is_deleted")
-    val isDeleted: Boolean = false
+    var isDeleted: Boolean = false
 ) : BaseEntity() {
     fun uploadImage(url: String) {
         this.imageUrl = url
@@ -44,5 +44,9 @@ class PlaylistEntity(
     fun editPlaylist(title: String, content: String) {
         this.title = title
         this.content = content
+    }
+
+    fun delete() {
+        this.isDeleted = true
     }
 }

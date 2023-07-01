@@ -30,4 +30,10 @@ class HashtagUpdater(
             hashtagCreator.create(addTargetHashtags)
         }
     }
+
+    @Transactional
+    fun delete(contentId: Long) {
+        hashtagRepository.findAllByContentId(contentId)
+            .forEach { it.delete() }
+    }
 }
