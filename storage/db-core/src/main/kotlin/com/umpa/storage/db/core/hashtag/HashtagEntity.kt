@@ -15,5 +15,9 @@ class HashtagEntity(
     val contentId: Long,
 
     @Column(name = "is_deleted")
-    val isDeleted: Boolean = false
-) : BaseEntity()
+    var isDeleted: Boolean = false
+) : BaseEntity() {
+    fun delete() {
+        this.isDeleted = true
+    }
+}
