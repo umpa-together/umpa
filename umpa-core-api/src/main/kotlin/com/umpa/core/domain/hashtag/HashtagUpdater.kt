@@ -19,7 +19,7 @@ class HashtagUpdater(
 
     private fun deleteContentHashtagsNotInEditHashtags(hashtagsInContent: List<HashtagEntity>, hashtagCreations: List<HashtagCreation>) {
         val editHashtags = hashtagCreations.map { it.hashtag }
-        hashtagsInContent.filter { editHashtags.contains(it.hashtag) }
+        hashtagsInContent.filter { !editHashtags.contains(it.hashtag) }
             .forEach { it.delete() }
     }
 

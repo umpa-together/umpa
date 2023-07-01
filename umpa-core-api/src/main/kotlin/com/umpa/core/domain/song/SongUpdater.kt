@@ -19,7 +19,7 @@ class SongUpdater(
 
     private fun deleteContentSongsNotInEditSongs(songsInContent: List<SongEntity>, songCreations: List<SongCreation>) {
         val editSongTrackIds = songCreations.map { it.id }
-        songsInContent.filter { editSongTrackIds.contains(it.spotifyTrackId) }
+        songsInContent.filter { !editSongTrackIds.contains(it.spotifyTrackId) }
             .forEach { it.delete() }
     }
 
