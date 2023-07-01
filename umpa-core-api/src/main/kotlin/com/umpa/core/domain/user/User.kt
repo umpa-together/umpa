@@ -1,5 +1,6 @@
 package com.umpa.core.domain.user
 
+import com.umpa.core.support.constants.ImageConstants
 import com.umpa.storage.db.core.user.UserEntity
 import java.time.LocalDateTime
 
@@ -13,7 +14,7 @@ data class User(
     val nickName: String?,
     val realName: String?,
     val introduction: String?,
-    val profileImage: String?,
+    val profileImage: String,
     val backgroundImage: String?,
     val accessedAt: LocalDateTime?
 ) {
@@ -29,10 +30,14 @@ data class User(
                 nickName = entity.nickName,
                 realName = entity.realName,
                 introduction = entity.introduction,
-                profileImage = entity.profileImage,
+                profileImage = entity.profileImage ?: ImageConstants.DEFAULT_PROFILE_IMAGE,
                 backgroundImage = entity.backgroundImage,
                 accessedAt = entity.accessedAt
             )
         }
+    }
+
+    fun userProfile(): UserProfile {
+        return UserProfile.fromUser(this)
     }
 }

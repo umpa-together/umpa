@@ -28,12 +28,16 @@ class PlaylistEntity(
     val accessedAt: LocalDateTime = LocalDateTime.now(),
 
     @Column(name = "view_count")
-    val viewCount: Long = 0L,
+    var viewCount: Long = 0L,
 
     @Column(name = "is_deleted")
     val isDeleted: Boolean = false
 ) : BaseEntity() {
     fun uploadImage(url: String) {
         this.imageUrl = url
+    }
+
+    fun increaseViewCount() {
+        viewCount += 1
     }
 }

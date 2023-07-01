@@ -1,6 +1,7 @@
 package com.umpa.core.domain.song.spotify
 
 import com.umpa.client.spotify.response.TrackDetailResponse
+import com.umpa.storage.db.core.song.SongEntity
 
 data class Track(
     val id: String,
@@ -19,6 +20,17 @@ data class Track(
                 albumImage = AlbumImage.fromImageResponse(response.album.images[0]),
                 isExplicit = response.explicit,
                 previewUrl = response.previewUrl
+            )
+        }
+
+        fun fromEntity(entity: SongEntity): Track {
+            return Track(
+                id = entity.spotifyTrackId,
+                name = entity.name,
+                artistNames = entity.artistNames.map { it },
+                albumImage = AlbumImage(entity.albumImage),
+                isExplicit = entity.isExplicit,
+                previewUrl = entity.previewUrl
             )
         }
     }

@@ -14,4 +14,9 @@ class CommentReader(
         return commentRepository.readById(id)
             ?: throw CoreApiException(ErrorType.NOT_FOUND_COMMENT)
     }
+
+    fun readByContentId(contentId: Long): List<Comment> {
+        return commentRepository.findAllByContentIdAndIsDeletedIsFalse(contentId)
+            .map { Comment.fromEntity(it) }
+    }
 }

@@ -40,7 +40,7 @@ internal class JwtTokenIssuerTest {
     @Test
     fun `토큰을 decode 했을 때 올바른 body를 얻는다`() {
         val actual = sut.decode(
-            "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4Njk3ODI2MywiZXhwIjoxNjg3MDY0NjYzfQ.cAP94gucxyYhduxtt6sFiEycPJBXIklafzan66vGzj0"
+            "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4ODE4MTA3MywiZXhwIjoxNjg4MjY3NDczfQ.sQc0TrN73kXwwWUimgDC4vkAUNXsi707pjCWz04KYq0"
         )
         val tokenUserId = actual["userId"]
         tokenUserId shouldBe userId
