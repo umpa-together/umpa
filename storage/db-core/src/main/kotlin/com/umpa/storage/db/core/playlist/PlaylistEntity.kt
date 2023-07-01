@@ -13,10 +13,10 @@ class PlaylistEntity(
     val userId: Long,
 
     @Column(name = "title")
-    val title: String,
+    var title: String,
 
     @Column(name = "content")
-    val content: String,
+    var content: String,
 
     @Column(name = "image_url")
     var imageUrl: String? = null,
@@ -38,6 +38,11 @@ class PlaylistEntity(
     }
 
     fun increaseViewCount() {
-        viewCount += 1
+        this.viewCount += 1
+    }
+
+    fun editPlaylist(title: String, content: String) {
+        this.title = title
+        this.content = content
     }
 }
