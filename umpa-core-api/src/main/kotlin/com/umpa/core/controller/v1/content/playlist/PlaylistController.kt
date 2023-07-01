@@ -6,6 +6,7 @@ import com.umpa.core.domain.content.playlist.PlaylistCreateService
 import com.umpa.commons.api.response.CommonApiResponse
 import com.umpa.core.controller.v1.content.playlist.request.PlaylistEditRequest
 import com.umpa.core.domain.content.playlist.PlaylistReadService
+import com.umpa.core.domain.content.playlist.PlaylistUpdateService
 import jakarta.validation.Valid
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,7 +21,8 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/v1/playlists")
 class PlaylistController(
     private val playlistCreateService: PlaylistCreateService,
-    private val playlistReadService: PlaylistReadService
+    private val playlistReadService: PlaylistReadService,
+    private val playlistUpdateService: PlaylistUpdateService
 ) {
     @PostMapping(
 //        consumes = [MediaType.MULTIPART_FORM_DATA_VALUE],
@@ -51,7 +53,7 @@ class PlaylistController(
         @RequestBody body: PlaylistEditRequest
     ): CommonApiResponse<PlaylistDetailResponse> {
         // TODO 헤더로 넘어온 access-token에서 userId resolve해서 넘겨주어야 함
-        val result = playlistCreateService.edit(body.toDomain(playlistId = id, userId = 0L))
+        val result = playlistUpdateService.edit(body.toDomain(playlistId = id, userId = 0L))
         return CommonApiResponse.success(PlaylistDetailResponse.fromPlaylistDetail(result))
     }
 }
