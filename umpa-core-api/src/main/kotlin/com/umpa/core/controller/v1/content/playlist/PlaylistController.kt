@@ -4,12 +4,14 @@ import com.umpa.core.controller.v1.content.playlist.request.PlaylistCreateReques
 import com.umpa.core.controller.v1.content.playlist.response.PlaylistDetailResponse
 import com.umpa.core.domain.content.playlist.PlaylistCreateService
 import com.umpa.commons.api.response.CommonApiResponse
+import com.umpa.core.controller.v1.content.playlist.request.PlaylistEditRequest
 import com.umpa.core.domain.content.playlist.PlaylistReadService
 import jakarta.validation.Valid
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -40,6 +42,16 @@ class PlaylistController(
     ): CommonApiResponse<PlaylistDetailResponse> {
         // TODO 헤더로 넘어온 access-token에서 userId resolve해서 넘겨주어야 함
         val result = playlistReadService.readById(id, 0L)
+        return CommonApiResponse.success(PlaylistDetailResponse.fromPlaylistDetail(result))
+    }
+
+    @PutMapping("/{id}")
+    fun edit(
+        @PathVariable id: Long,
+        @RequestBody body: PlaylistEditRequest
+    ): CommonApiResponse<PlaylistDetailResponse> {
+        // TODO 헤더로 넘어온 access-token에서 userId resolve해서 넘겨주어야 함
+        val result = playlistCreateService.edit(body.toDomain(playlistId = id, userId = 0L))
         return CommonApiResponse.success(PlaylistDetailResponse.fromPlaylistDetail(result))
     }
 }
