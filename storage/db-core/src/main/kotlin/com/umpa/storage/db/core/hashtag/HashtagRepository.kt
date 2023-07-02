@@ -4,4 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface HashtagRepository : JpaRepository<HashtagEntity, Long> {
     fun findAllByContentIdAndIsDeletedIsFalse(contentId: Long): List<HashtagEntity>
+
+    fun findAllByContentId(contentId: Long): List<HashtagEntity>
 }

@@ -15,6 +15,7 @@ enum class ErrorType(val statusCode: HttpStatus, val errorCode: ErrorCode, val m
     FORBIDDEN_PARENT_COMMENT_ID(HttpStatus.FORBIDDEN, ErrorCode.E4033, "댓글이 일치하지 않습니다."),
     FORBIDDEN_UNLIKE(HttpStatus.FORBIDDEN, ErrorCode.E4034, "좋아요를 취소할 수 없습니다."),
     FORBIDDEN_DELETED_PLAYLIST(HttpStatus.FORBIDDEN, ErrorCode.E4035, "삭제된 플레이리스트에 접근할 수 없습니다."),
+    FORBIDDEN_DELETE_PLAYLIST(HttpStatus.FORBIDDEN, ErrorCode.E4036, "해당 플레이리스트를 삭제할 수 없습니다."),
 
     NOT_FOUND_USER_EMAIL(HttpStatus.NOT_FOUND, ErrorCode.E4040, "해당 이메일과 일치하는 유저를 찾을 수 없습니다."),
     NOT_FOUND_COMMENT(HttpStatus.NOT_FOUND, ErrorCode.E4041, "해당 댓글을 찾을 수 없습니다."),

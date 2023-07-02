@@ -36,5 +36,9 @@ class SongEntity(
     val contentType: ContentType,
 
     @Column(name = "is_deleted")
-    val isDeleted: Boolean = false
-) : BaseEntity()
+    var isDeleted: Boolean = false
+) : BaseEntity() {
+    fun delete() {
+        this.isDeleted = true
+    }
+}
