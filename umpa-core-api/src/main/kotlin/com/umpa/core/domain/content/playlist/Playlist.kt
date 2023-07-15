@@ -37,4 +37,8 @@ data class Playlist(
     fun isNotMyPlaylist(userId: Long): Boolean {
         return this.userId != userId
     }
+
+    fun hasThumbnail(): Boolean {
+        return this.imageUrl != null
+    }
 }
