@@ -15,8 +15,8 @@ class SongReader(
             .map { Track.fromEntity(it) }
     }
 
-    fun readByUserId(userId: Long): List<Track> {
-        return songRepository.findAllByUserIdAndIsDeletedIsFalse(userId)
+    fun readByUserIdAndContentType(userId: Long, contentType: ContentType): List<Track> {
+        return songRepository.findAllByUserIdAndContentTypeAndIsDeletedIsFalse(userId, contentType)
             .map { Track.fromEntity(it) }
     }
 

@@ -8,7 +8,7 @@ interface SongRepository : JpaRepository<SongEntity, Long> {
 
     fun findAllByContentId(contentId: Long): List<SongEntity>
 
-    fun findAllByUserIdAndIsDeletedIsFalse(userId: Long): List<SongEntity>
+    fun findAllByUserIdAndContentTypeAndIsDeletedIsFalse(userId: Long, contentType: ContentType): List<SongEntity>
 
     fun findAllByContentIdInAndContentTypeAndIsDeletedIsFalse(contentIds: List<Long>, contentType: ContentType): List<SongEntity>
 }

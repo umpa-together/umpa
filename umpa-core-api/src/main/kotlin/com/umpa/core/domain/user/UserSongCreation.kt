@@ -1,5 +1,6 @@
 package com.umpa.core.domain.user
 
+import com.umpa.commons.enums.ContentType
 import com.umpa.core.domain.song.SongCreation
 import com.umpa.core.domain.song.spotify.Track
 
@@ -16,7 +17,8 @@ data class UserSongCreation(
                 artistNames = it.artistNames,
                 albumImage = it.albumImage,
                 isExplicit = it.isExplicit,
-                previewUrl = it.previewUrl
+                previewUrl = it.previewUrl,
+                contentType = ContentType.USER_REPRESENT
             )
         }
     }
