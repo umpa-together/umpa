@@ -15,7 +15,7 @@ class UserBuilder(
     val realName: String? = null,
     val introduction: String? = null,
     val profileImage: String = ImageConstants.DEFAULT_PROFILE_IMAGE,
-    val backgroundImage: String? = null,
+    val backgroundImage: String = ImageConstants.DEFAULT_PROFILE_BACKGROUND_IMAGE,
     val accessedAt: LocalDateTime? = LocalDateTime.now()
 ) {
     fun build(): User {

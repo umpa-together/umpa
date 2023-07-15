@@ -15,7 +15,7 @@ data class User(
     val realName: String?,
     val introduction: String?,
     val profileImage: String,
-    val backgroundImage: String?,
+    val backgroundImage: String,
     val accessedAt: LocalDateTime?
 ) {
     companion object {
@@ -31,13 +31,17 @@ data class User(
                 realName = entity.realName,
                 introduction = entity.introduction,
                 profileImage = entity.profileImage ?: ImageConstants.DEFAULT_PROFILE_IMAGE,
-                backgroundImage = entity.backgroundImage,
+                backgroundImage = entity.backgroundImage ?: ImageConstants.DEFAULT_PROFILE_BACKGROUND_IMAGE,
                 accessedAt = entity.accessedAt
             )
         }
     }
 
-    fun userProfile(): UserProfile {
+    fun profile(): UserProfile {
         return UserProfile.fromUser(this)
+    }
+
+    fun profileDetail(): UserProfileDetail {
+        return UserProfileDetail.fromUser(this)
     }
 }

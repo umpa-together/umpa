@@ -25,7 +25,7 @@ data class PlaylistDetailResponse(
             return PlaylistDetailResponse(
                 playlistId = detail.playlist.id,
                 createdAt = detail.playlist.createdAt,
-                postUser = PostUserResponse.fromUserProfile(detail.postUser.userProfile()),
+                postUser = PostUserResponse.fromUserProfile(detail.postUser.profile()),
                 title = detail.playlist.title,
                 content = detail.playlist.content,
                 imageUrl = detail.playlist.imageUrl,
