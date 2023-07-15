@@ -5,7 +5,7 @@ import com.umpa.core.domain.song.SongCreation
 import com.umpa.core.domain.song.spotify.AlbumImage
 
 class SongCreationBuilder(
-    val uploadUserId: Long = 0L,
+    val userId: Long = 0L,
     val contentId: Long = 0L,
     val id: String = "",
     val name: String = "",
@@ -17,7 +17,7 @@ class SongCreationBuilder(
 ) {
     fun build(): SongCreation {
         return SongCreation(
-            uploadUserId = uploadUserId,
+            userId = userId,
             contentId = contentId,
             id = id,
             name = name,

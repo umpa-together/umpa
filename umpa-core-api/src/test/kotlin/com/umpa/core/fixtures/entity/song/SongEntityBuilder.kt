@@ -4,7 +4,7 @@ import com.umpa.commons.enums.ContentType
 import com.umpa.storage.db.core.song.SongEntity
 
 class SongEntityBuilder(
-    val uploadUserId: Long = 0L,
+    val userId: Long = 0L,
     val contentId: Long = 0L,
     val spotifyTrackId: String = "",
     val name: String = "",
@@ -17,7 +17,7 @@ class SongEntityBuilder(
 ) {
     fun build(): SongEntity {
         return SongEntity(
-            uploadUserId = uploadUserId,
+            userId = userId,
             contentId = contentId,
             spotifyTrackId = spotifyTrackId,
             name = name,
