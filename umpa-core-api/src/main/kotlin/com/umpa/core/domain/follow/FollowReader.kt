@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 class FollowReader(
     private val followRepository: FollowRepository
 ) {
-    fun getFollowShipCountByUserId(userId: Long): FollowShipCount {
+    fun readFollowShipCountByUserId(userId: Long): FollowShipCount {
         val followingUserCount = followRepository.countByFollowingUserIdAndActiveIsTrue(userId)
         val followerUserCount = followRepository.countByFollowerUserIdAndActiveIsTrue(userId)
         return FollowShipCount(

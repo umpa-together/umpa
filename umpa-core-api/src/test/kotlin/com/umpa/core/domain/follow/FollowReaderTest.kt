@@ -18,9 +18,9 @@ internal class FollowReaderTest {
         every { repository.countByFollowingUserIdAndActiveIsTrue(any()) } returns followingCount
         every { repository.countByFollowerUserIdAndActiveIsTrue(any()) } returns followerCount
 
-        val actual = sut.getFollowShipCountByUserId(0L)
+        val actual = sut.readFollowShipCountByUserId(0L)
 
         actual.followerUserCount shouldBe followerCount
-        actual.followingUserCount shouldBe  followingCount
+        actual.followingUserCount shouldBe followingCount
     }
 }
