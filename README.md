@@ -297,9 +297,9 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ### userRoutes
 
-- [ ] 내 정보 조회 ```GET /user```
+- [x] 내 정보 조회 ```GET /users/me```
 
-- [ ] 다른 사람 정보 조회 ```GET /user/other/{id}```
+- [x] 다른 사람 정보 조회 ```GET /users/{id}```
 
 - [ ] 프로필 수정 ```POST /user/editProfile```
 
@@ -307,13 +307,13 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 - [ ] 팔로우 정보 조회 ```GET /user/follow/{id}```
 
-- [ ] 팔로우 ```GET /user/follow/{id}```
+- [x] 팔로우 ```POST /users/follow```
 
-- [ ] 언팔로우 ```DELETE /user/follow/{id}```
+- [x] 언팔로우 ```POST /users/unfollow```
 
 - [ ] 대표곡 가져오기 ```GET /user/songs/{userId}```
 
-- [ ] 대표곡 설정 ```POST /user/songs```
+- [x] 대표곡 설정 ```POST /users/songs```
 
 - [ ] 가이드 조회 ```GET /user/guide/{type}```
 

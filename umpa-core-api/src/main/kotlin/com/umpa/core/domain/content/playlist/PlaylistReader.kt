@@ -18,9 +18,4 @@ class PlaylistReader(
             Playlist.fromEntity(it)
         } ?: throw CoreApiException(ErrorType.NOT_FOUND_PLAYLIST)
     }
-
-    fun readByUserId(userId: Long) {
-        val playlists = playlistRepository.findAllByUserIdAndIsDeletedIsFalse(userId)
-        val playlistIds = playlists.map { it.id }
-    }
 }
