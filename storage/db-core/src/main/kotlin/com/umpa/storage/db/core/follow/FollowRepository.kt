@@ -7,7 +7,7 @@ interface FollowRepository : JpaRepository<FollowEntity, Long> {
 
     fun findByFollowingUserIdAndFollowerUserIdAndActiveIsTrue(followingUserId: Long, followerUserId: Long): FollowEntity?
 
-    fun countByFollowingUserIdAndActiveIsTrue(followingUserId: Long): Long
+    fun findByFollowingUserIdAndActiveIsTrue(followingUserId: Long): List<FollowEntity>
 
-    fun countByFollowerUserIdAndActiveIsTrue(followerUserId: Long): Long
+    fun findByFollowerUserIdAndActiveIsTrue(followerUserId: Long): List<FollowEntity>
 }

@@ -11,7 +11,7 @@ data class UserDetailResponse(
 ) {
     constructor(detail: UserDetail) : this(
         profile = UserProfileDetailResponse(detail.profile),
-        followShipCount = UserFollowShipCountResponse(detail.followShipCount),
+        followShipCount = UserFollowShipCountResponse(detail.followingAndFollower),
         representSongs = detail.representSongs,
         content = UserContentDetailResponse(detail.content)
     )

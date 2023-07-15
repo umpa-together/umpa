@@ -16,12 +16,12 @@ class UserDetailService(
     fun get(userId: Long): UserDetail {
         val profileDetail = userReader.readById(userId).profileDetail()
         val songs = songReader.readByUserIdAndContentType(userId, ContentType.USER_REPRESENT)
-        val followShipCount = followReader.readFollowShipCountByUserId(userId)
+        val followingAndFollower = followReader.readFollowShipCountByUserId(userId)
         val contentDetail = userContentReader.readByUserId(userId)
         return UserDetail(
             profile = profileDetail,
             representSongs = songs,
-            followShipCount = followShipCount,
+            followingAndFollower = followingAndFollower,
             content = contentDetail
         )
     }

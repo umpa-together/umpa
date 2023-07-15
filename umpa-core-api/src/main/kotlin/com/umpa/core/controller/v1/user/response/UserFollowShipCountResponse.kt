@@ -1,13 +1,13 @@
 package com.umpa.core.controller.v1.user.response
 
-import com.umpa.core.domain.follow.FollowShipCount
+import com.umpa.core.domain.follow.FollowingAndFollower
 
 data class UserFollowShipCountResponse(
-    val followingUserCount: Long,
-    val followerUserCount: Long
+    val followingUserCount: Int,
+    val followerUserCount: Int
 ) {
-    constructor(count: FollowShipCount) : this(
-        followingUserCount = count.followingUserCount,
-        followerUserCount = count.followerUserCount
+    constructor(followingAndFollower: FollowingAndFollower) : this(
+        followingUserCount = followingAndFollower.followingUserIds.size,
+        followerUserCount = followingAndFollower.followerUserIds.size
     )
 }

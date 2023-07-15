@@ -1,5 +1,6 @@
 package com.umpa.core.domain.follow
 
+import com.umpa.core.fixtures.domains.follow.FollowEntityBuilder
 import com.umpa.storage.db.core.follow.FollowRepository
 import io.kotest.matchers.shouldBe
 import io.mockk.every
@@ -12,15 +13,26 @@ internal class FollowReaderTest {
 
     @Test
     fun `userId를 기준으로 팔로우, 팔로잉한 유저수를 반환한다`() {
-        val followingCount = 3L
-        val followerCount = 5L
+        val followingUsers = listOf(
+            FollowEntityBuilder().build(),
+            FollowEntityBuilder().build(),
+            FollowEntityBuilder().build()
+        )
 
-        every { repository.countByFollowingUserIdAndActiveIsTrue(any()) } returns followingCount
-        every { repository.countByFollowerUserIdAndActiveIsTrue(any()) } returns followerCount
+        val followerUsers = listOf(
+            FollowEntityBuilder().build(),
+            FollowEntityBuilder().build(),
+            FollowEntityBuilder().build(),
+            FollowEntityBuilder().build(),
+            FollowEntityBuilder().build()
+        )
+
+        every { repository.findByFollowingUserIdAndActiveIsTrue(any()) } returns followingUsers
+        every { repository.findByFollowerUserIdAndActiveIsTrue(any()) } returns followerUsers
 
         val actual = sut.readFollowShipCountByUserId(0L)
 
-        actual.followerUserCount shouldBe followerCount
-        actual.followingUserCount shouldBe followingCount
+        actual.followingUserIds.size shouldBe followingUsers.size
+        actual.followerUserIds.size shouldBe followerUsers.size
     }
 }

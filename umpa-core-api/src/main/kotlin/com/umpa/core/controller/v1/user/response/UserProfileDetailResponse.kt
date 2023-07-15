@@ -10,7 +10,7 @@ data class UserProfileDetailResponse(
     val profileImage: String,
     val backgroundImage: String
 ) {
-    constructor(detail: UserProfileDetail): this(
+    constructor(detail: UserProfileDetail) : this(
         id = detail.id,
         nickName = detail.nickName,
         realName = detail.realName,
