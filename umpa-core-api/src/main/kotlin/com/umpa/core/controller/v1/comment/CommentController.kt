@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(
-    "/v1/playlists"
+    "/v1/playlists",
+    "/v1/dailies"
 )
 class CommentController(
     private val commentService: CommentService
