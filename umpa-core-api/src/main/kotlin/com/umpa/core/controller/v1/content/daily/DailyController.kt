@@ -5,6 +5,7 @@ import com.umpa.core.controller.v1.content.daily.request.DailyCreateRequest
 import com.umpa.core.controller.v1.content.daily.request.DailyEditRequest
 import com.umpa.core.controller.v1.content.daily.response.DailyDetailResponse
 import com.umpa.core.domain.content.daily.DailyCreateService
+import com.umpa.core.domain.content.daily.DailyDeleteService
 import com.umpa.core.domain.content.daily.DailyReadService
 import com.umpa.core.domain.content.daily.DailyUpdateService
 import jakarta.validation.Valid
@@ -15,7 +16,8 @@ import org.springframework.web.bind.annotation.*
 class DailyController(
     private val dailyCreateService: DailyCreateService,
     private val dailyReadService: DailyReadService,
-    private val dailyUpdateService: DailyUpdateService
+    private val dailyUpdateService: DailyUpdateService,
+    private val dailyDeleteService: DailyDeleteService
 ) {
     @PostMapping
     fun create(
@@ -44,5 +46,14 @@ class DailyController(
         // TODO userId resolve
         val result = dailyUpdateService.edit(body.toDomain(dailyId = id, userId = 0L))
         return CommonApiResponse.success(DailyDetailResponse(result))
+    }
+
+    @DeleteMapping("/{id}")
+    fun delete(
+        @PathVariable id: Long
+    ): CommonApiResponse<Nothing> {
+        // TODO userId resolve
+        dailyDeleteService.delete(dailyId = id, userId = 0L)
+        return CommonApiResponse.success()
     }
 }

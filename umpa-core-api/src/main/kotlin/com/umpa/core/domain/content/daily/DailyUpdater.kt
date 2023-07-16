@@ -23,4 +23,11 @@ class DailyUpdater(
             ?.let { Daily.fromEntity(it) }
             ?: throw CoreApiException(ErrorType.NOT_FOUND_DAILY)
     }
+
+    @Transactional
+    fun delete(id: Long) {
+        dailyRepository.findByIdOrNull(id)
+            ?.apply { this.delete() }
+            ?: throw CoreApiException(ErrorType.NOT_FOUND_PLAYLIST)
+    }
 }

@@ -34,4 +34,8 @@ class DailyEntity(
     fun editDaily(content: String) {
         this.content = content
     }
+
+    fun delete() {
+        this.isDeleted = true
+    }
 }
