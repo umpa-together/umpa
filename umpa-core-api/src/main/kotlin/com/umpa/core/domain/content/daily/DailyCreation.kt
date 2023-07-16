@@ -1,25 +1,23 @@
-package com.umpa.core.domain.content.playlist
+package com.umpa.core.domain.content.daily
 
 import com.umpa.commons.enums.ContentType
 import com.umpa.core.domain.feed.FeedCreation
 import com.umpa.core.domain.hashtag.HashtagCreation
 import com.umpa.core.domain.song.SongCreation
 import com.umpa.core.domain.song.spotify.Track
-import com.umpa.storage.db.core.playlist.PlaylistEntity
+import com.umpa.storage.db.core.daily.DailyEntity
 import org.springframework.web.multipart.MultipartFile
 
-data class PlaylistCreation(
+data class DailyCreation(
     val userId: Long,
-    val title: String,
     val content: String,
     val songs: List<Track>,
     val hashtags: List<String>,
-    val image: MultipartFile?
+    val images: List<MultipartFile>?
 ) {
-    fun toEntity(): PlaylistEntity {
-        return PlaylistEntity(
+    fun toEntity(): DailyEntity {
+        return DailyEntity(
             userId = userId,
-            title = title,
             content = content
         )
     }

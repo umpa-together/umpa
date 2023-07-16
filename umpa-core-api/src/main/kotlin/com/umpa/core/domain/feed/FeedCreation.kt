@@ -4,13 +4,13 @@ import com.umpa.commons.enums.ContentType
 import com.umpa.storage.db.core.feed.FeedEntity
 
 data class FeedCreation(
-    val uploadUserId: Long,
+    val userId: Long,
     val contentId: Long,
     val contentType: ContentType
 ) {
     fun toEntity(): FeedEntity {
         return FeedEntity(
-            uploadUserId = uploadUserId,
+            userId = userId,
             contentId = contentId,
             contentType = contentType
         )

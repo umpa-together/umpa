@@ -8,7 +8,7 @@ import jakarta.persistence.*
 @Table(name = "feed")
 class FeedEntity(
     @Column(name = "ref_user_id")
-    val uploadUserId: Long,
+    val userId: Long,
 
     @Column(name = "ref_content_id")
     val contentId: Long,
