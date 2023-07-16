@@ -28,6 +28,6 @@ class DailyUpdater(
     fun delete(id: Long) {
         dailyRepository.findByIdOrNull(id)
             ?.apply { this.delete() }
-            ?: throw CoreApiException(ErrorType.NOT_FOUND_PLAYLIST)
+            ?: throw CoreApiException(ErrorType.NOT_FOUND_DAILY)
     }
 }
