@@ -18,12 +18,13 @@ enum class ErrorType(val statusCode: HttpStatus, val errorCode: ErrorCode, val m
     FORBIDDEN_DELETE_PLAYLIST(HttpStatus.FORBIDDEN, ErrorCode.E4036, "해당 플레이리스트를 삭제할 수 없습니다."),
     FORBIDDEN_FOLLOW(HttpStatus.FORBIDDEN, ErrorCode.E4037, "해당 유저를 팔로우할 수 없습니다."),
     FORBIDDEN_UNFOLLOW(HttpStatus.FORBIDDEN, ErrorCode.E4038, "해당 유저를 팔로우 취소할 수 없습니다."),
-    FORBIDDEN_DELETED_DAILY(HttpStatus.FORBIDDEN, ErrorCode.E4039, "삭제된 데잍ㄹ리에 접근할 수 없습니다."),
+    FORBIDDEN_DELETED_DAILY(HttpStatus.FORBIDDEN, ErrorCode.E4039, "삭제된 데잍리에 접근할 수 없습니다."),
+    FORBIDDEN_EDIT_DAILY(HttpStatus.FORBIDDEN, ErrorCode.E40310, "해당 데일리 수정 권한이 없습니다."),
 
     NOT_FOUND_USER_EMAIL(HttpStatus.NOT_FOUND, ErrorCode.E4040, "해당 이메일과 일치하는 유저를 찾을 수 없습니다."),
     NOT_FOUND_COMMENT(HttpStatus.NOT_FOUND, ErrorCode.E4041, "해당 댓글을 찾을 수 없습니다."),
     NOT_FOUND_LIKES(HttpStatus.NOT_FOUND, ErrorCode.E4042, "해당 좋아요를 찾을 수 없습니다."),
     NOT_FOUND_PLAYLIST(HttpStatus.NOT_FOUND, ErrorCode.E4043, "해당 플레이리스트를 찾을 수 없습니다."),
     NOT_FOUND_USER(HttpStatus.NOT_FOUND, ErrorCode.E4044, "해당 유저를 찾을 수 없습니다."),
-    NOT_FOUND_DAILY(HttpStatus.NOT_FOUND, ErrorCode.E4045, "해당 데일리를 찾을 수 없습니다."),
+    NOT_FOUND_DAILY(HttpStatus.NOT_FOUND, ErrorCode.E4045, "해당 데일리를 찾을 수 없습니다.")
 }

@@ -30,4 +30,8 @@ class DailyEntity(
     fun increaseViewCount() {
         this.viewCount += 1
     }
+
+    fun editDaily(content: String) {
+        this.content = content
+    }
 }
