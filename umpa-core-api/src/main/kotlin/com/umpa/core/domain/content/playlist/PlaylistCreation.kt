@@ -42,7 +42,7 @@ data class PlaylistCreation(
 
     fun toFeedCreation(contentId: Long, contentType: ContentType): FeedCreation {
         return FeedCreation(
-            uploadUserId = userId,
+            userId = userId,
             contentId = contentId,
             contentType = contentType
         )
