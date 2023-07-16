@@ -29,4 +29,8 @@ data class Daily(
             )
         }
     }
+
+    fun isNotMyDaily(userId: Long): Boolean {
+        return this.userId != userId
+    }
 }

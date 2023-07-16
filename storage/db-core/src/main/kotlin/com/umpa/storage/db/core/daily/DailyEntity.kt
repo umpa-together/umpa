@@ -26,4 +26,8 @@ class DailyEntity(
 
     @Column(name = "is_deleted")
     var isDeleted: Boolean = false
-) : BaseEntity()
+) : BaseEntity() {
+    fun increaseViewCount() {
+        this.viewCount += 1
+    }
+}
