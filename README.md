@@ -104,35 +104,36 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
 
 ### dailyRoutes
 
-- [ ] 데일리 생성 ```POST /daily/```
+- [x] 데일리 생성 ```POST /dailies```
 
-- [ ] 데일리 수정 ```POST /daily/edit```
+- [x] 데일리 수정 ```PUT /dailies/{id}```
 
-- [ ] 데일리 삭제 ```DELETE /daily/{id}```
+- [x] 데일리 삭제 ```DELETE /dailies/{id}```
 
 - [ ] 이미지 업로드 ```POST /daily/imgUpload```
+  - <u>데일리 생성과 통합</u>
+- [x] 데일리 상세 조회 ```GET /dailies/{id}```
 
-- [ ] 데일리 상세 조회 ```GET /daily/{id}/{postUserId}```
-
-- [ ] 댓글 작성 ```POST /daily/comment/{id}```
-
-- [ ] 댓글 삭제 ```DELETE /daily/comment/{id}/{commentId}```
-
-- [ ] 대댓글 작성 ```POST /daily/recomment/{id}/{commentId}```
-
-- [ ] 대댓글 삭제 ```DELETE /daily/recomment/{id}/{commentId}```
-
-- [ ] 데일리 좋아요 ```POST /daily/like/{id}```
-
-- [ ] 데일리 좋아요 취소 ```DELETE /daily/like/{id}```
-
-- [ ] 댓글 좋아요 ```POST /daily/likecomment/{dailyId}/{commentId}```
-
-- [ ] 댓글 좋아요 취소 ```DELETE /daily/likecomment/{dailyId}/{commentId}```
-
-- [ ] 대댓글 좋아요 ```POST /daily/likerecomment/{dailyId}/{commentId}```
-
-- [ ] 대댓글 좋아요 취소 ```POST /daily/likerecomment/{dailyId}/{commentId}```
+- [x] 댓글 작성 ```POST /v1/dailies/{id}/comments```
+    - <u>댓글 도메인으로 분리</u>
+- [x] 댓글 삭제 ```DELETE /v1/dailies/{id}/comments/{commentId}```
+    - <u>댓글 도메인으로 분리</u>
+- [x] 대댓글 작성 ```POST /v1/dailies/{id}/comments/{commentId}/re-comments```
+    - <u>댓글 도메인으로 분리</u>
+- [x] 대댓글 삭제 ```DELETE /v1/dailies/{id}/comments/{commentId}/re-comments/{reCommentId}```
+    - <u>댓글 도메인으로 분리</u>
+- [x] 데일리 좋아요 ```POST /v1/likes```
+    - <u>좋아요 도메인으로 분리</u>
+- [x] 데일리 좋아요 취소 ```DELETE /v1/likes/{id}```
+    - <u>좋아요 도메인으로 분리</u>
+- [x] 댓글 좋아요 ```POST /v1/likes```
+    - <u>좋아요 도메인으로 분리</u>
+- [x] 댓글 좋아요 취소 ```DELETE /v1/likes/{id}```
+    - <u>좋아요 도메인으로 분리</u>
+- [x] 대댓글 좋아요 ```POST /v1/likes```
+    - <u>좋아요 도메인으로 분리</u>
+- [x] 대댓글 좋아요 취소 ```DELETE /v1/likes/{id}```
+    - <u>좋아요 도메인으로 분리</u>
 
 ### feedRoutes
 
@@ -190,25 +191,26 @@ RDS로 마이그레이션 하기 위한 도메인은 다음과 같습니다.
   - <u>플레이리스트 생성과 통합</u>
 - [x] 플레이리스트 상세 조회 ```GET /playlists/{id}```
 
-- [x] 댓글 작성 ```POST /playlists/{id}/comments```
-
-- [x] 댓글 삭제 ```DELETE /playlists/{id}/comments/{commentId}```
-
-- [x] 대댓글 작성 ```POST /playlists/{id}/comments/{commentId}/re-comments```
-
-- [x] 대댓글 삭제 ```DELETE /playlists/{id}/comments/{commentId}/re-comments/{recommentId}```
-
-- [x] 플레이리스트 좋아요 ```POST /v1/playlists/{id}/likes```
-
-- [x] 플레이리스트 좋아요 취소 ```DELETE /playlists/{id}/likes```
-
-- [x] 댓글 좋아요 ```POST /comments/{id}/likes```
-
-- [x] 댓글 좋아요 취소 ```DELETE /comments/{id}/likes```
-
-- [x] 대댓글 좋아요 ```POST /re-comments/{id}/likes```
-
-- [x] 대댓글 좋아요 취소 ```DELETE /re-comments/{id}/likes```
+- [x] 댓글 작성 ```POST /v1/playlists/{id}/comments```
+  - <u>댓글 도메인으로 분리</u>
+- [x] 댓글 삭제 ```DELETE /v1/playlists/{id}/comments/{commentId}```
+  - <u>댓글 도메인으로 분리</u>
+- [x] 대댓글 작성 ```POST /v1/playlists/{id}/comments/{commentId}/re-comments```
+  - <u>댓글 도메인으로 분리</u>
+- [x] 대댓글 삭제 ```DELETE /v1/playlists/{id}/comments/{commentId}/re-comments/{reCommentId}```
+  - <u>댓글 도메인으로 분리</u>
+- [x] 플레이리스트 좋아요 ```POST /v1/likes```
+  - <u>좋아요 도메인으로 분리</u>
+- [x] 플레이리스트 좋아요 취소 ```DELETE /v1/likes/{id}```
+  - <u>좋아요 도메인으로 분리</u>
+- [x] 댓글 좋아요 ```POST /v1/likes```
+  - <u>좋아요 도메인으로 분리</u>
+- [x] 댓글 좋아요 취소 ```DELETE /v1/likes/{id}```
+  - <u>좋아요 도메인으로 분리</u>
+- [x] 대댓글 좋아요 ```POST /v1/likes```
+  - <u>좋아요 도메인으로 분리</u>
+- [x] 대댓글 좋아요 취소 ```DELETE /v1/likes/{id}```
+  - <u>좋아요 도메인으로 분리</u>
 
 ### relayRoutes
 
